@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Batch1_DET_2022
 {
-    internal class IteratorDemo
+    internal class IteratorDemo1
     {
         public static System.Collections.Generic.IEnumerable<int>
         EvenSequence(int firstNumber, int lastNumber)

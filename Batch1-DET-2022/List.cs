@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Batch1_DET_2022
 {
-    public class List
+    public class List1
     {
         public static void Main()
         {

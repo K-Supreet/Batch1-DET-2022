@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Batch1_DET_2022
 {
-    internal class CsFeatures
+    internal class CsFeatures1
     {
         public static void Main()
         {
