@@ -146,7 +146,7 @@ namespace Batch1_DET_2022
                             Size = 100,
                             Direction = System.Data.
                             ParameterDirection.Input,
-                            Value = 7521
+                            Value = 7522
                         },
 
                          new SqlParameter() {
@@ -173,16 +173,45 @@ namespace Batch1_DET_2022
                             Size = 100,
                             Direction = System.Data.
                             ParameterDirection.Input,
-                            Value = 7777 },
+                            Value = 7782 },
 
                            new SqlParameter() {
                             ParameterName = "@hiredate",
                             SqlDbType =  System.Data.
-                            SqlDbType.VarChar,
+                            SqlDbType.Date,
                             Size = 100,
                             Direction = System.Data.
                             ParameterDirection.Input,
-                            Value = "WARNER"},
+                            Value = "09/05/2022"},
+
+                            new SqlParameter() {
+                            ParameterName = "@sal",
+                            SqlDbType =  System.Data.SqlDbType.Int,
+                            Size = 100,
+                            Direction = System.Data.
+                            ParameterDirection.Input,
+                            Value = 2500
+                        },
+                             new SqlParameter() {
+                            ParameterName = "@comm",
+                            SqlDbType =  System.Data.SqlDbType.Int,
+                            Size = 100,
+                            Direction = System.Data.
+                            ParameterDirection.Input,
+                            Value = 500
+                        },
+
+                             new SqlParameter() {
+                            ParameterName = "@dept",
+                            SqlDbType =  System.Data.SqlDbType.Int,
+                            Size = 100,
+                            Direction = System.Data.
+                            ParameterDirection.Input,
+                            Value = 20
+                        },
+
+
+
 
 
 
@@ -194,7 +223,7 @@ namespace Batch1_DET_2022
                            
             try
             {
-                var result = ctx.Database.ExecuteSqlRaw("updatenames1 @empno, @newname, @job, @mgr, @hiredate,@sal, @comm, @dept", param);
+                var result = ctx.Database.ExecuteSqlRaw("updatenames1 @empno, @newname, @job, @mgr, @hiredate, @sal, @comm, @dept", param);
                 Console.WriteLine("added");
             }
             catch (Exception ex)
