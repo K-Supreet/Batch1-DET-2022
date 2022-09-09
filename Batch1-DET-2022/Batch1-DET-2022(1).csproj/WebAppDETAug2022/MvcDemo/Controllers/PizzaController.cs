@@ -48,16 +48,17 @@ namespace MvcDemo.Controllers
             PizzaServices.Delete(p.Id);
             return RedirectToAction("List");
         }
-        //public IActionResult Edit()
-        //{
+        public IActionResult Edit()
+        {
 
-        //    return View();
-        //}
-        //[HttpPost]
-        //public IActionResult Edit(int ID,string Name,)
-        //{
-        //    PizzaServices.Add(p);
-        //    return RedirectToAction("List");
-        //}
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Edit(int ID, string Name, PizzaSize Size, bool IsGlutenFree, decimal Price)
+        {
+            Pizza p = new Pizza { Id = ID, Name = Name, Size = Size, Price = Price, IsGlutenFree = IsGlutenFree };
+            PizzaServices.Update(p);
+            return RedirectToAction("List");
+        }
     }
 }

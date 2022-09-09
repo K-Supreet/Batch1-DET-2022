@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MvcDemo.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MvcDemoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcDemoContext") ?? throw new InvalidOperationException("Connection string 'MvcDemoContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -22,6 +27,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Events}/{action=Index}/{id?}");
+    pattern: "{controller=Friend}/{action=List}/{id?}");
 
 app.Run();
