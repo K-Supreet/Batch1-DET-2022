@@ -5,46 +5,53 @@ namespace WebAppDETAug2022.Services
 {
     public class TicketServices
     {
-        static List<Pizza> Pizzas { get; }
+        static List<Ticket> Tickets { get; }
         static int nextId = 3;
         static TicketServices()
         {
-            Pizzas = new List<Pizza>
+            Tickets = new List<Ticket>
                 {
-                    new Pizza { Id = 1, Name = "Classic Italian", Price=20.00M, Size=PizzaSize.    Large, IsGlutenFree = false },
-                    new Pizza { Id = 2, Name = "Veggie", Price=15.00M, Size=PizzaSize.Small,     IsGlutenFree = true }
+                    new Ticket { Id=1,Category="PlatinumPlus",Price=5000,MaxLimit=200000},
+                    new Ticket { Id=2,Category="Platinum",Price=4000,MaxLimit=300000 },
+                    new Ticket { Id=3,Category="Gold",Price=3000,MaxLimit=500000 },
+                    new Ticket { Id=4,Category="Silver",Price=2000,MaxLimit=500000 },
+                    new Ticket { Id=5,Category="General",Price=8000,MaxLimit=100000 },
                 };
         }
+        public static List<Ticket> GetAll() => Tickets;
 
-        public static List<Pizza> GetAll() => Pizzas;
+        // public static Tickets? Get(int id) => Ticket.FirstOrDefault(p => p.Id == id);
 
-        public static Pizza? Get(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
-
-        public static void Add(Pizza pizza)
+        public static void Add(Ticket Ticket)
         {
-            pizza.Id = nextId++;
-            Pizzas.Add(pizza);
+            Tickets.Add(Ticket);
         }
 
-        public static void Delete(int id)
-        {
-            var pizza = Get(id);
-            if (pizza is null)
-                return;
+        //public static void Delete(int id)
+        //{
+        //    var Tickets = Get(id);
+        //    if (Tickets is null)
+        //        return;
 
-            Pizzas.Remove(pizza);
+        //    Ticket.Remove(Tickets);
+        //}
+
+        private static object Get(int id)
+        {
+            throw new NotImplementedException();
         }
 
-        public static void Update(Pizza pizza)
-        {
-            var index = Pizzas.FindIndex(p => p.Id == pizza.Id);
-            if (index == -1)
-                return;
+        //public static void Update(Tickets Tickets)
+        //{
+        //    var index = Ticket.FindIndex(p => p.Id == Tickets.Id);
+        //    if (index == -1)
+        //        return;
 
-            Pizzas[index] = pizza;
-        }
+        //    Ticket[index] = Tickets;
+        //}
     }
 }
+
 
 
 

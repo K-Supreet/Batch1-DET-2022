@@ -16,6 +16,8 @@ namespace MvcDemo.Data
 
         public DbSet<MvcDemo.Models.Booking> Booking { get; set; } = default!;
 
+        public DbSet<MvcDemo.Models.Friend>? Friend { get; set; }
+
 
 
     }
