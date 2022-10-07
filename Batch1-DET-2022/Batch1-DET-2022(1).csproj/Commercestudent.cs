@@ -1,23 +1,23 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//namespace ConsoleApp1
-//{
-    
-//    internal class CommerceStudent : Student
-//    {
-//        public int economices { get; set; }
-//        public int accounts { get; set; }
+namespace ConsoleApp1
+{
 
-//        public int banking { get; set; }
+    internal class CommerceStudent : Student
+    {
+        public int economices { get; set; }
+        public int accounts { get; set; }
 
-//        public override double GetAvgMarks()
-//        {
-//            return (economices + accounts + banking) / 3;
-//        }
-//    }
-//}
+        public int banking { get; set; }
+
+        public override double GetAvgMarks()
+        {
+            return (economices + accounts + banking) / 3;
+        }
+    }
+}
 
