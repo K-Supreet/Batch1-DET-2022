@@ -18,11 +18,11 @@ namespace ConsoleAppNewOne
             int age;
             int currentyear = 2022;
             int EligibleYear;
-            int[] DOB = new int[10];
+            int[]  DOB = new int[10];
             Console.WriteLine("Enter your age:");
             for (int i = 0; i < DOB.Length; i++)
             {
-                DOB[i] = int.Parse(Console.ReadLine());
+                DOB[i] = Convert.ToInt32(Console.ReadLine());
 
                 age = currentyear - DOB[i];
 
